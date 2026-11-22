@@ -1,0 +1,101 @@
+.facility-rank-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.facility-rank-heading h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+}
+
+.rank-badge {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  flex: 0 0 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank-badge__number {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid #c5ccd6;
+  border-radius: 50%;
+  background: #edf0f5;
+  color: #364356;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.rank-badge--gold {
+  --rim: #a16612;
+  --light: #fff1ba;
+  --metal: #e1a43d;
+  --ink: #593700;
+  --ribbon: #a54624;
+}
+
+.rank-badge--silver {
+  --rim: #78879a;
+  --light: #f6faff;
+  --metal: #a8b5c7;
+  --ink: #344156;
+  --ribbon: #4d6086;
+}
+
+.rank-badge--bronze {
+  --rim: #915232;
+  --light: #fce1cf;
+  --metal: #c98256;
+  --ink: #5f301b;
+  --ribbon: #83563b;
+}
+
+.rank-badge:is(.rank-badge--gold, .rank-badge--silver, .rank-badge--bronze)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 1.75rem 0.2rem -0.28rem;
+  background: var(--ribbon);
+  clip-path: polygon(17% 0, 83% 0, 100% 100%, 72% 82%, 54% 100%, 50% 55%, 46% 100%, 28% 82%, 0 100%);
+}
+
+.rank-badge:is(.rank-badge--gold, .rank-badge--silver, .rank-badge--bronze) .rank-badge__number {
+  position: relative;
+  box-sizing: border-box;
+  width: 2.56rem;
+  height: 2.56rem;
+  border: 1px solid var(--rim);
+  background: radial-gradient(ellipse at 28% 16%, #fff9 0%, transparent 65%),
+      linear-gradient(145deg, var(--light), var(--metal));
+  box-shadow: inset 0 0 0 2px var(--light), inset 0 0 0 3px var(--rim),
+      0 2px 5px #20232b40;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.rank-evidence-warning {
+  display: inline-grid;
+  place-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-inline-start: 0.25em;
+  border-radius: 50%;
+  background: #b42336;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: 0.12em;
+}
